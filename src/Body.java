@@ -10,7 +10,7 @@ public class Body {
     private double myYVel;
     private double myMass;
     private String myFileName;
-    public static final double GRAV = 6.67E-11;
+
 
     /**
      * Create a body from parameters
@@ -93,13 +93,14 @@ public class Body {
      * @return the force exertedy by this body on p
      */
     public double calcForceExertedBy(Body p){
+        double grav = 6.67E-11;
         double force;
 
         double r = calcDistance(p);
         double mm = this.myMass * p.getMass();
         force = mm;
         force /= Math.pow(r, 2);
-        force *= GRAV;
+        force *= grav;
         return force;
     }
 
